@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HANA.CO Coffee Shop</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="Menu.css">
+  
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>HANA.CO</h1>
+  <nav class="navbar">
+    <a href="Main.html">Home</a>
+    <a href="#menu">Best Deals</a>
+    <a href="#milktea">Drinks</a>
+    <a href="#fruitseries">Refreshers</a>
+    <a href="#frappe">Blended Drinks</a>
+    <a href="#snacks">Snacks</a>
+  </nav>
+  <div class="cart-icon" id="cartBtn">
+    <i class="fa-solid fa-cart-arrow-down"></i>
+    <span class="cart-count" id="cartCount">0</span>
+  </div>
+</header>
+
+<!-- ===== HERO/BACKGROUND IMAGE ===== -->
+<div class="hero">
+  <div class="ads">
+    <h1 class="h1">Brew & Bliss A Cozy Corner for Coffee Lovers</h1>
+    <p>
+      Step into a world where every sip warms your heart, every aroma awakens your senses, 
+      and every cup tells a story of comfort and connection.
+    </p>
+  </div>
+
+  <div class="carousel">
+    <div class="group">
+      <div class="Ccrls"><img src="Icons/ml.jpg" alt="Coffee"></div>
+      <div class="Ccrls"><img src="Icons/sl.jpg" alt="Coffee"></div>
+      <div class="Ccrls"><img src="Icons/cm.jpg" alt="Coffee"></div>
+      <div class="Ccrls"><img src="Icons/sf.jpg" alt="Coffee"></div>
+    </div>
+
+    <div aria-hidden="true" class="group">
+      <div class="Ccrls"><img src="Icons/ml.jpg" alt="Coffee"></div>
+      <div class="Ccrls"><img src="Icons/sc.jpg" alt="Coffee"></div>
+      <div class="Ccrls"><img src="Icons/mf.jpg" alt="Coffee"></div>
+      <div class="Ccrls"><img src="Icons/ml.jpg" alt="Coffee"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== FOOD CATEGORY NAV ===== -->
+<nav class="foodcat" id="menu">
+  <a href="#hotcoffee">Hot Coffee</a>
+  <a href="#icedcoffee">Iced Coffee</a>
+  <a href="#noncoffee">Non-Coffee Drinks</a>
+  <a href="#milktea">Milk Tea</a>
+  <a href="#fruitseries">Fruit Series</a>
+  <a href="#frappe">Frappé</a>
+  <a href="#snacks">Snacks</a>
+  <a href="#meals">Meals</a>
+</nav>
+
+  <!-- ===== MENU SECTIONS ===== -->
+<div class="bs">
+  <section id="bestD">
+    <h2 class="category-title">BEST SELLERS</h2>
+    <div class="wrapper">
+      <div class="card">
+        <img src="Icons/mmt.jpg" alt="">
+        <div class="info">
+          <h2>Matcha Milk Tea</h2>
+          <p>Experience calm energy in every creamy sip of our refreshing Matcha Milk tea</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="Icons/sl.jpg" alt="">
+        <div class="info">
+          <h2>Iced Latte</h2>
+          <p>Sweet, strong, and refreshingly cool — your perfect pick-me-up!</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="Icons/cm.jpg" alt="">
+        <div class="info">
+          <h2>Caramel Macchiato</h2>
+          <p>Rich espresso, creamy milk, and golden caramel in every smooth sip.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="Icons/sf.jpg" alt="">
+        <div class="info">
+          <h2>Strawberry Frappe Refresher</h2>
+          <p>A bright, fruity burst of sweetness that’s as refreshing as it</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="Icons/mf.jpg" alt="">
+        <div class="info">
+          <h2>Mocha Frappe</h2>
+          <p>A rich, chocolatey chill blended with espresso for the ultimate cool indulgence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Hot Coffee Section -->
+<section id="hotcoffee">
+  <h2 class="category-title">HOT COFFEE</h2>
+  <div class="menuM">
+    <div class="food-Items">
+      <img src="Icons/chm.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Caramel Macchiato</h3>
+          <h3 class="price">₱45</h3>
+        </div>
+        <p>Sweet and creamy espresso with caramel.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/esp2.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Espresso</h3>
+          <h3 class="price">₱40</h3>
+        </div>
+        <p>Strong and bold espresso shot.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/sl2.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Latte</h3>
+          <h3 class="price">₱50</h3>
+        </div>
+        <p>Creamy latte with steamed milk.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/mca.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Mocha</h3>
+          <h3 class="price">₱55</h3>
+        </div>
+        <p>Chocolate-infused caramel with milk.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Iced Coffee Section -->
+<section id="icedcoffee">
+  <h2 class="category-title">ICED COFFEE</h2>
+  <div class="menuM">
+    <div class="food-Items">
+      <img src="Icons/ic.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Iced Caramel</h3>
+          <h3 class="price">₱50</h3>
+        </div>
+        <p>Cold espresso with caramel and milk.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/is.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Iced Latte</h3>
+          <h3 class="price">₱50</h3>
+        </div>
+        <p>Chilled milk with espresso shots.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/im.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Iced Mocha</h3>
+          <h3 class="price">₱55</h3>
+        </div>
+        <p>Cold chocolate espresso delight.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/ia.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Iced Americano</h3>
+          <h3 class="price">₱45</h3>
+        </div>
+        <p>Chilled strong espresso over ice.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Non-Coffee Drinks Section -->
+<section id="noncoffee">
+  <h2 class="category-title">NON-COFFEE</h2>
+  <div class="menuM">
+    <div class="food-Items">
+      <img src="Icons/hc.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Hot Chocolate</h3>
+          <h3 class="price">₱40</h3>
+        </div>
+        <p>Rich and creamy chocolate drink.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/hm.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Milk</h3>
+          <h3 class="price">₱35</h3>
+        </div>
+        <p>Fresh warm milk served in cup.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/ht.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Herbal Tea</h3>
+          <h3 class="price">₱40</h3>
+        </div>
+        <p>Calming caffeine-free herbal infusion.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/lmd.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Lemonade</h3>
+          <h3 class="price">₱35</h3>
+        </div>
+        <p>Refreshing lemon drink with ice.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Milk Tea Section -->
+<section id="milktea">
+  <h2 class="category-title">MILK TEA</h2>
+  <div class="menuM">
+    <div class="food-Items">
+      <img src="Icons/cmt.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Classic Milk Tea</h3>
+          <h3 class="price">₱45</h3>
+        </div>
+        <p>Sweet tea with creamy milk.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/bsmt.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Brown Sugar Milk Tea</h3>
+          <h3 class="price">₱50</h3>
+        </div>
+        <p>Rich caramelized sugar milk tea.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/tmt.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Taro Milk Tea</h3>
+          <h3 class="price">₱50</h3>
+        </div>
+        <p>Sweet purple taro flavor with milk.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/matchamt.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Matcha Milk Tea</h3>
+          <h3 class="price">₱55</h3>
+        </div>
+        <p>Green tea blended with milk.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fruit Series Section -->
+<section id="fruitseries">
+  <h2 class="category-title">FRUIT REFRESHERS</h2>
+  <div class="menuM">
+    <div class="food-Items">
+      <img src="Icons/ms.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Mango Smoothie</h3>
+          <h3 class="price">₱60</h3>
+        </div>
+        <p>Fresh mango blended with ice.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/sms.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Strawberry Shake</h3>
+          <h3 class="price">₱60</h3>
+        </div>
+        <p>Sweet strawberries blended with milk.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/bns.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Banana Smoothie</h3>
+          <h3 class="price">₱55</h3>
+        </div>
+        <p>Creamy banana with milk and ice.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/mbs.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Mixed Berry Smoothie</h3>
+          <h3 class="price">₱65</h3>
+        </div>
+        <p>Blend of berries and ice.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Frappé Section -->
+<section id="frappe">
+  <h2 class="category-title">FRAPPE SERIES</h2>
+  <div class="menuM">
+    <div class="food-Items">
+      <img src="Icons/mcf.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Mocha Frappé</h3>
+          <h3 class="price">₱65</h3>
+        </div>
+        <p>Blended coffee with chocolate.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/carf.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Caramel Frappé</h3>
+          <h3 class="price">₱65</h3>
+        </div>
+        <p>Sweet caramel blended with coffee.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/vf.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Vanilla Frappé</h3>
+          <h3 class="price">₱60</h3>
+        </div>
+        <p>Blended coffee with vanilla flavor.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/sbf.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Strawberry Frappé</h3>
+          <h3 class="price">₱60</h3>
+        </div>
+        <p>Strawberries blended with ice and cream.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Snacks Section -->
+<section id="snacks">
+  <h2 class="category-title">SNACKS</h2>
+  <div class="menuM">
+    <div class="food-Items">
+      <img src="Icons/chocmf.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Choco Muffin</h3>
+          <h3 class="price">₱35</h3>
+        </div>
+        <p>Soft chocolate muffin.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/bbmf.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Blueberry Muffin</h3>
+          <h3 class="price">₱35</h3>
+        </div>
+        <p>Soft muffin with blueberry filling.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/cookies.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Cookies</h3>
+          <h3 class="price">₱25</h3>
+        </div>
+        <p>Fresh baked cookies.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/croissant.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Croissant</h3>
+          <h3 class="price">₱40</h3>
+        </div>
+        <p>Flaky buttery pastry.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Meals Section -->
+<section id="meals">
+  <h2 class="category-title">MEALS</h2>
+  <div class="menuM">
+    <div class="food-Items">
+      <img src="Icons/csw.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Chicken Sandwich</h3>
+          <h3 class="price">₱75</h3>
+        </div>
+        <p>Grilled chicken with fresh veggies.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/beefb.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Beef Burger</h3>
+          <h3 class="price">₱80</h3>
+        </div>
+        <p>Juicy beef patty with toppings.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/spag.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Spaghetti</h3>
+          <h3 class="price">₱70</h3>
+        </div>
+        <p>Classic spaghetti with tomato sauce.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+    <div class="food-Items">
+      <img src="Icons/fishf.jpg">
+      <div class="details">
+        <div class="sub-details">
+          <h3>Fish Fillet</h3>
+          <h3 class="price">₱75</h3>
+        </div>
+        <p>Crispy fried fish with sides.</p>
+        <button class="add-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===== CART MODAL ===== -->
+  <div id="cart">
+    <div class="cart-header">
+      <h2>Cart</h2>
+    </div>
+
+    <div class="cartProd">
+      <div id="cartItems"></div>
+
+      <div class="cart-summary">
+        <p><strong>Total:</strong><span id="cartTotal"></span></p>
+      </div>
+
+      <div class="cart-actions">
+        <button id="clearCart">🧹 Clear</button>
+        <button id="closeCart">✖ Close</button>
+        <button id="submitOrder" onclick="submitOrder()">✅ Submit Order</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Menu.js"></script>
+
+</body>
+</html>

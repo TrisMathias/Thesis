@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Coffee Shop</title>
+  <link rel="stylesheet" href="Menu.css">
+</head>
+<body>
+
+  <header>
+    <h1>HANA.CO</h1>
+
+    <nav class="navbar">
+      <a href="#home">home</a>
+      <a href="Menus.html">menu</a>
+      <a href="#about">about</a>
+    </nav>
+    
+    <div class="cart-icon" id="cartBtn">
+      🛒<span class="cart-count" id="cartCount">0</span>
+    </div>
+
+  </header>
+  
+  <section class="home" id="home">
+    
+    <div class="content">
+        <h3>Be best, wear best.</h3>
+        <span> Accurately crafted just the way you wanted. </span>
+        <p>Jek's Jewelry Shop is sophisticated, chic, and classy jewelry designed for everybody. Simply put, it is luxury made into a habbit, not a rarity.</p>
+        <a href="#products" class="btn">shop now</a>
+    </div>
+
+  </section>
+
+  <section id="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Coffee Latte">
+      <h3>Coffee Latte</h3>
+      <p>₱120</p>
+      <button class="add-btn" data-name="Coffee Latte" data-price="120">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03" alt="Cappuccino">
+      <h3>Cappuccino</h3>
+      <p>₱140</p>
+      <button class="add-btn" data-name="Cappuccino" data-price="140">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1521305916504-4a1121188589" alt="Espresso">
+      <h3>Espresso</h3>
+      <p>₱100</p>
+      <button class="add-btn" data-name="Espresso" data-price="100">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187" alt="Mocha">
+      <h3>Mocha</h3>
+      <p>₱160</p>
+      <button class="add-btn" data-name="Mocha" data-price="160">Add to Cart</button>
+    </div>
+  </section>
+
+  <div id="cart">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <p>Total: ₱<span id="cartTotal">0</span></p>
+    <button id="clearCart">Clear Cart</button>
+    <button id="closeCart">Close</button>
+  </div>
+
+  <script src="menu.js"></script>
+</body>
+</html>

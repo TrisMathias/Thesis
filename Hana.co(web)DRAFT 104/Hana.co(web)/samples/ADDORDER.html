@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Order</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input { padding: 8px; margin-right: 10px; }
+    button { padding: 8px 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Submit an Order</h1>
+  <input type="text" id="orderInput" placeholder="Enter customer name">
+  <button onclick="submitOrder()">Submit Order</button>
+
+  <script>
+    function submitOrder() {
+      const input = document.getElementById('orderInput');
+      const name = input.value.trim();
+
+      if (!name) {
+        alert('Please enter a name');
+        return;
+      }
+
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+      const newOrder = {
+        id: Date.now(),
+        name: name,
+        orderlist: "Custom order", // or you can customize this
+        date: new Date().toLocaleString(),
+        status: 'pending'
+      };
+
+      orders.push(newOrder);
+      localStorage.setItem('orders', JSON.stringify(orders));
+
+      input.value = '';
+      alert('Order submitted successfully!');
+
+      // ✅ Redirect directly to the "Orders" section in Main.html
+      window.location.href = 'Main.html#orders';
+    }
+  </script>
+</body>
+</html>

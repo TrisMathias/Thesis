@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        CRUD IN JAVASCRIPT
+    </title>
+
+    <style>
+        body > table{
+            width: 80%;
+        }
+
+        table{
+            border-collapse: collapse;
+        }
+
+        table.list{
+            width: 100%;
+        }
+
+        td, th{
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even),table.list thead>tr {
+            background-color: #dddddd;
+        }
+
+        input[type=text], input[type=number]{
+            width: 90%;
+            padding: 12px 20px;
+            margin:  8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #subBtn{
+            padding: 10px 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="onFormSubmit(); return false;" autocomplete="off">
+                    <div>
+                        <label>Full Name</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label>EMP CODE</label>
+                        <input type="text" name="empCode" id="empCode">
+                    </div>
+                    <div>
+                        <label>Salary</label>
+                        <input type="text" name="salary" id="salary">
+                    </div>
+                    <div>
+                        <label>City</label>
+                        <input type="text" name="city" id="city">
+                    </div>
+                    <div class="form-action-buttons">
+                        <input type="submit" id="subBtn"  value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>EMP Code</th>
+                            <th>Salary</th>
+                            <th>City</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script src="crud.js"></script>
+</body>
+</html>

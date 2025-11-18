@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup System</title>
+
+  <!-- Google Material For Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Material Icons Outlined -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <link rel="stylesheet" href="LogSign.css">
+</head>
+<body>
+  <div id="auth-container">
+    <!-- Signup Form -->
+    <div id="signup-form" style="display: block;">
+      <h2>Signup</h2>
+      <input type="text" id="fname" name="fname" placeholder="Name" required>
+      <input type="email" id="signup-email" name="email" placeholder="Email" required>
+      <input type="text" id="contact" name="contact" placeholder="Contact" required>
+      <input type="password" id="signup-password" name="password" placeholder="Password" required>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+      
+      <button onclick="signup()">Signup</button>
+      <p>Already have an account? <a href="javascript:void(0)" onclick="showLogin()">Login</a></p>
+    </div>
+
+
+    <!-- Login Form -->
+    <div id="login-form" style="display: none;">
+      <h2>Login</h2>
+      <input type="text" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="javascript:void(0)" onclick="showSignup()">Signup</a></p>
+    </div>
+  </div>
+
+  <script src="LogSign.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+:root{
+    --base-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    text-align: center;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url(Icons/bg.jpg);
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+}
+
+.wrapper {
+    background-color: var(--base-color);
+    height: 100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+form{
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(78, 48, 33, 0.863);
+    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+}
+
+
+
+
+
+/* ===== Global Styles ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(Icons/bg9.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Wrapper Container ===== */
+.wrapper {
+    background-color: rgba(53, 33, 20, 0.562);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Heading ===== */
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* ===== Form Layout ===== */
+form {
+    width: min(400px, 100%);
+    margin: 20px 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form label {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(78, 48, 33, 0.863);
+    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input {
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1.5em;
+    border: none;
+    outline: none;
+}
+
+/* ===== Button Styling ===== */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: rgb(68, 32, 12);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(68, 32, 12, 0.548);
+}
+
+/* ===== Text & Link Styles ===== */
+p {
+    margin-top: -30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+a {
+    color: rgb(0, 4, 255);
+    text-decoration: none;
+}
+
+a:hover {
+    color: brown;
+    text-decoration: underline;
+}

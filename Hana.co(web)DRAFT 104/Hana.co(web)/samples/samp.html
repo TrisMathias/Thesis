@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sidebar with Dropdown - Example</title>
+  <style>
+    :root{
+      --sidebar-width: 260px;
+      --accent: #6c5ce7;
+      --bg: #f6f7fb;
+      --text: #222;
+      --muted: #7b7b9a;
+      --card: #ffffff;
+      --shadow: 0 6px 18px rgba(23,23,45,0.06);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      min-height:100vh;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width:var(--sidebar-width);
+      background:linear-gradient(180deg, #ffffff, #fbfbff);
+      border-right:1px solid rgba(15,15,40,0.03);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      box-shadow: var(--shadow);
+    }
+
+    .brand{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding:6px 8px;
+      margin-bottom:6px;
+    }
+    .logo{
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent), #00b894);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:18px;
+    }
+    .brand h1{
+      margin:0;
+      font-size:16px;
+      letter-spacing:0.2px;
+    }
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    /* Nav list */
+    nav{margin-top:8px; flex:1; overflow:auto;}
+    .nav-item{
+      list-style:none;
+      margin:6px 0;
+    }
+    .nav-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:8px;
+      color:var(--text);
+      cursor:pointer;
+      transition:background .12s, transform .06s;
+    }
+    .nav-link:hover{background:rgba(99,102,241,0.06)}
+    .nav-link .left{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .nav-link .ico{
+      width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+      background:rgba(99,102,241,0.06);font-weight:600;color:var(--accent);
+    }
+    .nav-link .text{
+      display:flex;flex-direction:column;
+    }
+    .nav-link .title{font-size:14px;margin:0}
+    .nav-link .subtitle{font-size:12px;color:var(--muted);margin:0}
+
+    /* Dropdown */
+    .dropdown{
+      padding-left:8px;
+      margin-top:6px;
+      display:none;
+      flex-direction:column;
+      gap:6px;
+    }
+    .dropdown .sub-link{
+      padding:8px 12px;
+      border-radius:6px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:var(--text);
+      font-size:13px;
+    }
+    .dropdown .sub-link:hover{background:rgba(15,15,45,0.03)}
+
+    /* Active states */
+    .nav-link.active{background:linear-gradient(90deg, rgba(108,92,231,0.12), rgba(0,184,148,0.06));box-shadow:inset 0 0 0 1px rgba(108,92,231,0.06)}
+    .sub-link.active{font-weight:600;color:var(--accent)}
+
+    /* Footer small text */
+    .sidebar-footer{font-size:12px;color:var(--muted);padding-top:10px;border-top:1px dashed rgba(15,15,45,0.03);}
+
+    /* Content area */
+    .content{
+      flex:1;
+      padding:28px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:var(--shadow);
+      max-width:920px;
+    }
+
+    /* Responsive: collapse sidebar under 800px */
+    @media (max-width:800px){
+      .sidebar{ position:fixed; left:-320px; top:0; bottom:0; z-index:50; transition:left .28s; }
+      .sidebar.open{ left:0; }
+      .mobile-toggle{
+        display:inline-flex;
+        align-items:center;
+        gap:10px;
+        background:var(--card);
+        border-radius:10px;
+        padding:8px 12px;
+        box-shadow:var(--shadow);
+      }
+    }
+    @media (min-width:801px){
+      .mobile-toggle{ display:none; }
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="logo">H</div>
+      <div>
+        <h1>Hana.Co</h1>
+        <p>Order & Inventory</p>
+      </div>
+    </div>
+
+    <nav>
+      <ul style="padding:0;margin:0;">
+        <li class="nav-item">
+          <div class="nav-link active" data-target="">
+            <div class="left">
+              <div class="ico">🏠</div>
+              <div class="text">
+                <div class="title">Dashboard</div>
+                <div class="subtitle">Overview & stats</div>
+              </div>
+            </div>
+            <div>›</div>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <div class="nav-link" data-toggle="dropdown-1">
+            <div class="left">
+              <div class="ico">📦</div>
+              <div class="text">
+                <div class="title">Products</div>
+                <div class="subtitle">Manage items</div>
+              </div>
+            </div>
+            <div class="chev">▾</div>
+          </div>
+          <div class="dropdown" id="dropdown-1">
+            <a class="sub-link" href="#">All Products</a>
+            <a class="sub-link" href="#">Add Product</a>
+            <a class="sub-link" href="#">Categories</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <div class="nav-link" data-toggle="dropdown-2">
+            <div class="left">
+              <div class="ico">🧾</div>
+              <div class="text">
+                <div class="title">Transactions</div>
+                <div class="subtitle">Sales & history</div>
+              </div>
+            </div>
+            <div class="chev">▾</div>
+          </div>
+          <div class="dropdown" id="dropdown-2">
+            <a class="sub-link" href="#">POS</a>
+            <a class="sub-link" href="#">Transaction Log</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <div class="nav-link" data-target="">
+            <div class="left">
+              <div class="ico">⚙️</div>
+              <div class="text"><div class="title">Settings</div><div class="subtitle">Preferences</div></div>
+            </div>
+            <div>›</div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div>Logged in as <strong>Admin</strong></div>
+      <div style="margin-top:6px;font-size:12px">v1.0 • Hana.Co</div>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div style="display:flex;gap:12px;align-items:center;">
+      <button id="hambtn" class="mobile-toggle" aria-label="Toggle sidebar">☰ Menu</button>
+      <h2>Page title</h2>
+    </div>
+
+    <div style="margin-top:18px;">
+      <div class="card">
+        <h3>Example content</h3>
+        <p>This is an example layout. Click the items on the left sidebar. On narrow screens, use the Menu button to toggle the sidebar.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Basic sidebar dropdown and active logic
+    document.addEventListener('click', function(e){
+      // toggle dropdowns
+      const toggle = e.target.closest('[data-toggle]');
+      if(toggle){
+        const key = toggle.getAttribute('data-toggle');
+        const dd = document.getElementById(key);
+        if(dd){
+          const isOpen = dd.style.display === 'flex';
+          // close all dropdowns first
+          document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+          // toggle requested
+          dd.style.display = isOpen ? 'none' : 'flex';
+        }
+        // don't treat as nav-target click
+        return;
+      }
+
+      // nav-link clicks (set active)
+      const nav = e.target.closest('.nav-link');
+      if(nav){
+        document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+        nav.classList.add('active');
+        // close mobile sidebar on small screens
+        if(window.innerWidth <= 800){
+          document.getElementById('sidebar').classList.remove('open');
+        }
+      }
+
+      // submenu clicks (set active visual)
+      const sub = e.target.closest('.sub-link');
+      if(sub){
+        document.querySelectorAll('.sub-link').forEach(s => s.classList.remove('active'));
+        sub.classList.add('active');
+      }
+    });
+
+    // Mobile menu toggle
+    document.getElementById('hambtn').addEventListener('click', function(){
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+
+    // Close dropdowns if clicking outside sidebar
+    document.addEventListener('click', function(e){
+      const withinSide = e.target.closest('.sidebar');
+      if(!withinSide){
+        document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+      }
+    });
+
+    // Optional: close sidebar on escape
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        document.getElementById('sidebar').classList.remove('open');
+        document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+      }
+    });
+  </script>
+</body>
+</html>

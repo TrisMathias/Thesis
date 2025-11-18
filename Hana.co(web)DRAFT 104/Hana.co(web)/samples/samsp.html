@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Inventory Dropdown</title>
+<style>
+  body { margin:0; font-family:Arial; background:#f4f4f4; }
+  .sidebar { width:220px; background:#3E2F2F; color:#fff; height:100vh; padding:10px; }
+  .nav-item { padding:10px; cursor:pointer; border-radius:5px; }
+  .nav-item:hover { background:#5a4343; }
+  .dropdown { display:none; flex-direction:column; margin-left:20px; }
+  .dropdown a { color:#fff; text-decoration:none; padding:5px 0; }
+  .dropdown a:hover { text-decoration:underline; }
+  .show { display:flex; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="nav-item" id="inventoryBtn">Inventory</div>
+  <div class="dropdown" id="inventoryMenu">
+    <a href="#">Products</a>
+    <a href="#">Category</a>
+    <a href="#">Supplier</a>
+  </div>
+</div>
+
+<script>
+  const btn = document.getElementById("inventoryBtn");
+  const menu = document.getElementById("inventoryMenu");
+  btn.onclick = () => menu.classList.toggle("show");
+</script>
+
+</body>
+</html>

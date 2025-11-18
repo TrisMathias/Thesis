@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Archivo+Black&display=swap');
+
+body{
+  display: flex;
+  margin: 0%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   CUSTOM SCROLLBAR
+========================= */
+::-webkit-scrollbar{
+  display: none;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.logo img {
+  width: 240px;
+  height: 80px;
+  margin-top: 10px;
+}
+
+.sidebar{
+  position: relative;
+  width: 260px;
+  min-height: 140vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background-color: #111111;
+  color: #FAF3E0;
+}
+
+.sidebar h3 {
+  margin-left: 18px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(0.625rem, 0.4688rem + 0.5vw, 0.75rem);
+  font-weight: 100;
+  font-style: normal;
+  color: #e0d3c7;
+}
+
+/* =========================
+   NAV BUTTONS PER SECTION
+========================= */
+.nav-item {
+  display: flex;
+  padding: 12px 25px;
+  margin-bottom: 5px;
+  gap: 12px;
+  color: #FAF3E0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-item  {
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: #3e2f2fad;
+  transform: scale(1.00);
+  box-shadow: 0 4px 8px #3e2f2fad;
+}
+
+/* ===== DROPDOWN FOR INVENTORY ===== */
+.dropdown {
+  display: none;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.dropdown.show {
+  display: flex;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  margin-left: 260px;
+  top: 0;
+  height: 70px;
+  background-color: #141414;
+  color: #FAF3E0;
+  align-items: center;
+  padding: 0 25px;
+  box-shadow: 0 4px 5px #141414;
+  z-index: 1000;
+  font-family: "Poppins", sans-serif;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-name {
+  margin-top: 1px;
+  font-size: clamp(0.7rem, 0.7rem + 0vw, 0.7rem);
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.notif, .mail{
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.role {
+  font-size: 10px;
+  margin-top: -10px;
+}
+
+.user-profile i {
+  font-size: 38px;
+  color: #FAF3E0;
+  cursor: pointer;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main-content{
+  flex: 1;
+  position: relative;
+  padding: 0 20px;
+  margin: 80px 0;
+  background: #ffffff66;
+  overflow-y: auto;
+  border-radius: 0 15px 15px 0;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.03);
+  transition: margin 0.3s ease;
+}
+
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
+.page-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2em;
+  font-weight: 800;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  bottom: 5px; 
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #4361ee, #240a0a);
+  border-radius: 10px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+#addProductBtn,
+#addCategoryBtn,
+#addSupplierBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #3E2F2F;
+  border: 2px solid #3E2F2F;
+  padding: 7px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  float: right;
+  margin-top: -65px;
+  transition: all 0.3s ease;
+}
+
+#addProductBtn:hover,
+#addCategoryBtn:hover,
+#addSupplierBtn:hover {
+  background: #3E2F2F;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(62, 47, 47, 0.6);
+}
+
+/* =========================
+   ADDING PRD,CAT,SUPP FORMS
+========================= */
+form {
+  width: 300px;
+  position: absolute;
+  right: 30px;
+  top: 60px;
+  background: #fff;
+  padding: 10px 30px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px #ff00000d;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+form input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  border-color: #3E2F2F;
+  box-shadow: 0 0 5px rgba(62, 47, 47, 0.3);
+}
+
+form button {
+  background: #3E2F2F;
+  color: #FAF3E0;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 147px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background: #005c42;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px #00976c;
+}
+
+.cancelBtn:hover {
+  background-color: #9b3535;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px #ff4f4f;
+}
+
+/* =========================
+  TABLES 
+========================= */
+.table-card {
+  background-color: #ffffff;
+  padding: 5px 20px 20px;
+  box-shadow: 0 0 10px rgba(38, 27, 27, 0.082);
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  color: #3E2F2F;
+  font-size: 90%;
+}
+
+table th {
+  background: #3E2F2F;
+  color: #faf3e0e8;
+  font-weight: 600;
+}
+
+table tr:hover {
+  background: #f7f7f7;
+}
+
+/* =========================
+  TABLES ACTION BUTTONS
+========================= */
+
+.editBtn,
+.deleteBtn,
+.printBtn,
+.completeBtn,
+.exportBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 120px;
+  height: 35px;
+  margin: 5px 5px 10px 0;
+  font-size: 14px;
+  border: 1px solid;
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Individual button colors */
+.editBtn { background-color: #3E2F2F; border-color: #3E2F2F; }
+.deleteBtn { background-color: #3E2F2F; border-color: #3E2F2F; }
+.printBtn { background-color: #3E2F2F; border-color: #3E2F2F; }
+.completeBtn { background-color: #3E2F2F; border-color: #3E2F2F; }
+.exportBtn { background-color: #2c1616; border-color: #2c1616; }
+
+/* Hover effects */
+.editBtn:hover { background-color: #191f50; border-color: #191f50; }
+.deleteBtn:hover { background-color: #8e3b3b; border-color: #8e3b3b; }
+.printBtn:hover { background-color: #262164; border-color: #262164; }
+.completeBtn:hover { background-color: #1a4129; border-color: #1a4129; }
+.exportBtn:hover { background-color: #552727; }
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.stat-card:hover {
+  transform: translateY(-7px);
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title button {
+  width: 135px;
+  height: 35px;
+  margin-top: 15px;
+  border: 1px solid #2c1616;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #2c1616;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-title button:hover {
+  background-color: #2b0000;
+  color: #ffffff;
+  transform: scale(1.03);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #2c1435;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.card-value {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card-label {
+  color: #718096;
+  font-size: 15px;
+}
+
+/* ===============================
+   STATS CARD SECTION
+=============================== */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.6s ease;
+}
+
+/* ===== Individual Card ===== */
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Side color strip */
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.stat-card:nth-child(1)::before {
+  background: linear-gradient(to bottom, #2c1b10, #4b2e05); /* Espresso Roast */
+}
+.stat-card:nth-child(2)::before {
+  background: linear-gradient(to bottom, #4b2e05, #7b4f1d); /* Dark Mocha */
+}
+.stat-card:nth-child(3)::before {
+  background: linear-gradient(to bottom, #7b4f1d, #b67e3e); /* Caramel Brew */
+}
+.stat-card:nth-child(4)::before {
+  background: linear-gradient(to bottom, #b67e3e, #d6a15c); /* Latte Foam */
+}
+
+/* Hover animation */
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Header ===== */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+/* ===== Icon Styles ===== */
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.card-icon.purple {
+  background: linear-gradient(135deg, #3e2723, #5d4037); /* Dark Roast */
+}
+.card-icon.blue {
+  background: linear-gradient(135deg, #6d4c41, #8d6e63); /* Mocha Brown */
+}
+.card-icon.green {
+  background: linear-gradient(135deg, #8d6e63, #a1887f); /* Latte Cream */
+}
+.card-icon.orange {
+  background: linear-gradient(135deg, #a0522d, #d7b899); /* Caramel Macchiato */
+}
+
+/* ===== Text ===== */
+.card-value {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-family: "Outfit", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .card-value {
+  color: #552727;
+}
+
+.card-label {
+  color: #718096;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Outfit", sans-serif;
+}
+
+/* ===== Trend/Change ===== */
+.card-change {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 8px 0 0;
+  font-weight: 600;
+}
+
+.card-change i {
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.card-change.positive {
+  color: #1f3a00; /* Soft matcha green - positive but subtle */
+}
+
+.card-change.negative {
+  color: #410000; /* Muted rose red - fits warm tones */
+}
+
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.settContainer{
+  display: flex;
+  background-color: #ffffff;
+  color: #ff0000;
+  gap: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  height: 150vh;
+  border: 1px solid #000000;
+}
+
+.settNav{
+  background-color: #dfcfcf;
+  border-radius: 10px;
+  width: 70vh;
+  text-align: center;
+}
+.settNav h1{
+  font-size: 5.5vh;
+  margin: 10px 0 0;
+}
+.settNav img{
+  width: 200px;
+}
+
+.settNav h3{
+  font-size: 25px;
+}
+
+.settNav p{
+  margin: -30px 0 0;
+  font-size: 15px;
+}
+
+.navbar{
+  margin: 10px;
+  background-color: #eee7e7;
+  padding: 20px 10px;
+  border-radius: 10px;
+}
+
+.navbar a{
+  display: flex;
+  padding: 12px 25px;
+  margin-bottom: 5px;
+  gap: 12px;
+  color: #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.navbar a  {
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: #ff0000ad;
+  transform: scale(1.00);
+  box-shadow: 0 4px 8px #ff0000ad;
+  color: #ffffff;
+}
+
+.profile{
+  width: 100%;
+}

@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Changa+One&family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Headline:wght@200..700&family=Stack+Sans+Notch:wght@200..700&display=swap');
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 50px 0;
+  background-image: url(Icons/v882-kul-55.jpg);
+  background-size: cover;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+.sup{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.sup img {
+    width: 60%;                /* Image will fit its container */
+    height: auto;               /* Keeps aspect ratio (important!) */
+    border-radius: 20px 0 0 20px;
+    box-shadow: 0 0 20px #ff0000;
+    display: block;
+    object-fit: cover;          /* Ensures nice fit if container is fixed */
+}
+
+.signUp{
+    background-color: #ff000081;
+    text-align: center;
+    padding: 20px 50px;
+    color: white;
+    box-shadow: 0 0 20px #5c0000;
+}
+
+input {
+  width: 93%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #ff4f4f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff0000;
+}
+
+h2{
+  font-size: 35px;
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  margin: 35px 0 10px;
+}
+
+p {
+  text-align: center;
+  margin: 10px 0 20px;
+  font-family: "Stack Sans Headline", sans-serif;
+  font-weight: 400;
+  font-size: smaller;
+}
+
+a {
+  color: #ffbdbd;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.social a{
+  color: #ffffff;
+  gap: 10px;
+}
+
+
+.social a:nth-child(1) {
+    background-color: #003cff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.social a:nth-child(1):hover {
+    background-color: #2965ff;
+    transform: scale(1.15); /* slight zoom */
+    box-shadow: 0 0 15px #2965ff;
+}
+
+.social a:nth-child(2) {
+    background-color: #ff008c;
+    padding: 10px 13px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.social a:nth-child(2):hover {
+    background-color: #ff33a5;
+    transform: scale(1.15);
+    box-shadow: 0 0 15px #ff33a5;
+}
+
+.social a:nth-child(3) {
+    background-color: #078b0d;
+    padding: 10px 13px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.social a:nth-child(3):hover {
+    background-color: #11b019;
+    transform: scale(1.15);
+    box-shadow: 0 0 15px #11b019;
+}
+
+.logIn {
+    background-color: #ff000081;
+    text-align: center;
+    padding: 100px 50px;
+    color: white;
+    box-shadow: 0 0 20px #5c0000;
+}
+
+.lin {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+    flex-direction: row-reverse; /* Image on the right, form on the left */
+}
+
+.lin img {
+    width: 60%;                /* Same as signup */
+    height: auto;
+    border-radius: 0 20px 20px 0; /* Mirror the signup's border-radius */
+    box-shadow: 0 0 20px #ff0000;
+    object-fit: cover;
+    display: block;
+}
+
+
